@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GKE_PROJECT: itis-441214
-      GKE_CLUSTER: itiitiss
+      GKE_CLUSTER: itis
       GKE_ZONE: europe-west12-a
 
     steps:
