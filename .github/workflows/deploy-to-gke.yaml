@@ -13,7 +13,7 @@ jobs:
     env:
       GKE_PROJECT: itis-441214
       GKE_CLUSTER: itiitiss
-      GKE_ZONE: europe-west12
+      GKE_ZONE: europe-west12-a
 
     steps:
       - name: Checkout
