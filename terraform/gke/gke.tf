@@ -1,13 +1,13 @@
-# resource "google_container_cluster" "itis" {
-#   name               = "itis"
-#   project            = "itis-441214"
-#   location           = "europe-west12-a"
-#   deletion_protection = false
-#   initial_node_count = 1
-#   node_config {
-#     service_account = "sa-gke-itis@itis-441214.iam.gserviceaccount.com"
-#   }
-# }
+resource "google_container_cluster" "itis" {
+  name               = "itis"
+  project            = "itis-441214"
+  location           = "europe-west12-a"
+  deletion_protection = false
+  initial_node_count = 1
+  node_config {
+    service_account = "sa-gke-itis@itis-441214.iam.gserviceaccount.com"
+  }
+}
 
 resource "google_artifact_registry_repository" "itis-repo" {
   location      = "europe-west12"

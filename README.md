@@ -1,5 +1,22 @@
 # Cloud Computing
 
+## Lab 1
+
+Creare una vm con terraform:
+- type: e2-micro
+- image: cos-cloud/cos-stable
+- boot disk size: 25
+- network interface: public ip
+
+
+## Lab 2
+
+Creare una github action che deploya un container con nginx sulla vm creata nel lab 1
+
+## Lab 3 
+
+Creare una github action che deploya un container nginx su k8s
+
 
 ## Link utili
 
