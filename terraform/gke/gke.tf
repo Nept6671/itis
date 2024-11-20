@@ -51,11 +51,33 @@ resource "google_service_account" "alunno_sa" {
   display_name = "sa-${each.value}" 
 }
 
-resource "google_project_iam_member" "user_role" {
+resource "google_project_iam_member" "user_role_k8s" {
   for_each = toset([ for num in range(16) : "alunno-${num}" ])
 
   project = "itis-441214"
   role    = "roles/container.developer"
+  member  = "serviceAccount:sa-${each.value}@itis-441214.iam.gserviceaccount.com"
+  depends_on = [
+    google_service_account.alunno_sa
+  ]
+}
+
+resource "google_project_iam_member" "user_role_ssh" {
+  for_each = toset([ for num in range(16) : "alunno-${num}" ])
+
+  project = "itis-441214"
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = "serviceAccount:sa-${each.value}@itis-441214.iam.gserviceaccount.com"
+  depends_on = [
+    google_service_account.alunno_sa
+  ]
+}
+
+resource "google_project_iam_member" "user_role_compute" {
+  for_each = toset([ for num in range(16) : "alunno-${num}" ])
+
+  project = "itis-441214"
+  role    = "roles/compute.instanceAdmin.v1"
   member  = "serviceAccount:sa-${each.value}@itis-441214.iam.gserviceaccount.com"
   depends_on = [
     google_service_account.alunno_sa
