@@ -34,5 +34,5 @@ jobs:
       - name: Docker run
         run: |
           gcloud compute ssh ${{ env.VM_NAME }} --zone ${{ env.ZONE }} --impersonate-service-account=${{ env.SA_EMAIL }} -- '
-          docker run -p 80:80 nginx
+          docker run -p 80:80 -d nginx
           '
