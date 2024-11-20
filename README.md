@@ -1,6 +1,25 @@
 # Cloud Computing
 
 
+## Link utili
+
+# Cloud Provider
+- https://cloud.google.com/docs
+- https://docs.aws.amazon.com/
+- https://learn.microsoft.com/en-us/azure/?product=popular
+
+# Iac
+- https://developer.hashicorp.com/terraform/docs
+- https://docs.ansible.com/
+
+# CI/CD
+- https://docs.github.com/en/actions/about-github-actions/understanding-github-actions
+- https://www.jenkins.io/doc/
+- https://argo-cd.readthedocs.io/en/stable/
+
+
+---
+
 ```
 docker buildx build -t sftp sftp
 
